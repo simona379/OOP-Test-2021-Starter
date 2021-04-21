@@ -22,6 +22,21 @@ public class ScoreDisplay extends PApplet
 	private float x;
 
 
+	//Write code that renders the music note at the mouseX location in red
+	public void mouseHover() {
+	if (mouseX > x -  (30 /2) && mouseX < x + (30/2) && mouseY > y - (30/2) && mouseY < y + (30/2))
+	{
+		fill(255, 0, 0);                
+	}
+	else
+	{
+		fill(0);
+	}
+	circle(x, y, 30);
+
+	}
+
+
 	//if loadScore() was functional, this should iterate over ArrayList & print the score
     public void printScores()
     {
