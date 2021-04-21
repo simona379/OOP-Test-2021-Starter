@@ -25,7 +25,7 @@ public class ScoreDisplay extends PApplet
 	//if loadScore() was functional, this should iterate over ArrayList & print the score
     public void printScores()
     {
-        for(Note n:notes)
+        for( Note n:notes )
         {
 			//toString() implicitly called 
             println(n);
@@ -41,7 +41,7 @@ public class ScoreDisplay extends PApplet
 		String s = score;
 
 		//wanted to iterate backwards but need to add duration = 2 if there was a number after letter
-		for( int i = 0; i < s.length(); i++ )
+		for( int i = 0 ; i < s.length() ; i++ )
 		{
 			//using s.charAt
 			s.charAt(i);
@@ -112,7 +112,7 @@ public class ScoreDisplay extends PApplet
 		//5 verticle lines
 		stroke(0);
 		
-        for(int i = 0 ; i < 5 ; i ++)
+        for( int i = 0 ; i < 5 ; i ++ )
         {
 			//get y co-ordinates 
 			float y = map(i, 1, 5, border, height - border);
@@ -125,12 +125,29 @@ public class ScoreDisplay extends PApplet
 		fill(0);
 		textAlign(LEFT, CENTER);
 
-		for(int i = 0 ; i < score.length() ; i ++)
+		for( int i = 0 ; i < score.length() ; i ++ )
 		{
 			//get x co-ordinates 			
 			float x = map(i, 0, score.length(), border, width - border);
 
 			text(score.charAt(i), x, border / 2);
+
+			fill(0);
+			circle(x, y, 30);
+
+			stroke(0);
+			line(x, y - 5, x, y + 5);
+		}
+
+		//to draw the notes, I will have to iterate over ArrayList of notes, and use this to drive 
+		//I never got loadScore() to work so I'll just put in some code I think would work
+
+		//size() implemented here to get number of elements in array (instead of length())
+		for( int i = 0 ; i < notes.size() ; i++)
+		{
+			//need x & y co-ords
+
+
 		}
 
 	}
