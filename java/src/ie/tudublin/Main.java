@@ -1,3 +1,7 @@
+// C19343861
+// Simona Petrauskaite
+// DT228/2
+
 package ie.tudublin;
 
 public class Main

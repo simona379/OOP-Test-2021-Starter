@@ -7,10 +7,16 @@ import processing.core.PApplet;
 
 public class ScoreDisplay extends PApplet
 {
+	//declare an ArrayList for holding instances of the Note class
+	ArrayList<Note> notes = new ArrayList<Note>();
+
 	String score = "DEFGABcd";
 	//String score = "D2E2F2G2A2B2c2d2";
 	//String score = "DEF2F2F2EFA2A2B2AFD2E2D2D2D2";
 	
+	//write a method called loadScore that populates the ArrayList from the contents of the String score
+
+
 	public void settings()
 	{
 		size(1000, 500);
