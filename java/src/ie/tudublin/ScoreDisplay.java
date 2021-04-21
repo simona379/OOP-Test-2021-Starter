@@ -19,24 +19,34 @@ public class ScoreDisplay extends PApplet
 	{
 		String s = score;
 
-		
-		for( int i = s.length(); i >= 0; i-- )
+		//wanted to iterate backwards but need to add duration = 2 if there was a number after letter
+		for( int i = 0; i < s.length(); i++ )
 		{
 			//using s.charAt
 			s.charAt(i);
 			//using Character.isDigit
 			boolean check = Character.isDigit(i);
 
+			//converting to int
+			int num = s.charAt(i) - '0';
+
 			if(check == true)
-			{
-				int duration = s.charAt(i);
+			{		
+				//the note before the number
+				char note = s.charAt(i--);
+				String type = "Crotchet";
+				int duration = 2;
 			}
 			else
 			{
 				char note = s.charAt(i);
+				String type = "Quaver";
+				int duration = 1;
 			}
 
 
+			//Note n = new Note(row);
+			//notes.add(n);
 
 
 		}
