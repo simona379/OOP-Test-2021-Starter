@@ -5,15 +5,30 @@ import java.util.ArrayList;
 
 import processing.core.PApplet;
 
+
 public class ScoreDisplay extends PApplet
 {
 	//declare an ArrayList for holding instances of the Note class
 	ArrayList<Note> notes = new ArrayList<Note>();
 
+
 	String score = "DEFGABcd";
 	//String score = "D2E2F2G2A2B2c2d2";
 	//String score = "DEF2F2F2EFA2A2B2AFD2E2D2D2D2";
 	
+
+	//if loadScore() was functional, this should iterate over ArrayList & print the score
+    public void printScores()
+    {
+        for(Note n:notes)
+        {
+            println(n);
+        }
+    }
+
+
+
+
 	//write a method called loadScore that populates the ArrayList from the contents of the String score
 	public void loadScore()
 	{
@@ -24,6 +39,7 @@ public class ScoreDisplay extends PApplet
 		{
 			//using s.charAt
 			s.charAt(i);
+
 			//using Character.isDigit
 			boolean check = Character.isDigit(i);
 
@@ -44,21 +60,16 @@ public class ScoreDisplay extends PApplet
 				int duration = 1;
 			}
 
-
+			//need to get these three values into my ArrayList
 			//Note n = new Note(row);
 			//notes.add(n);
 
+			//Table table = loadTable(score);
 
-		}
+			//notes.add(duration);
 
-		
-
-
-		//for loop to iterate through score, and add to notes
-
-
-		//notes.add(?);
-		
+			//for() loop again ?
+		}	
 	}
 
 
@@ -76,7 +87,7 @@ public class ScoreDisplay extends PApplet
 
 	public void setup() 
 	{
-		
+		loadScore();
 	}
 
 	public void draw()
