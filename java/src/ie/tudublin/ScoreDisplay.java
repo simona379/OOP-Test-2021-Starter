@@ -15,6 +15,26 @@ public class ScoreDisplay extends PApplet
 	//String score = "DEF2F2F2EFA2A2B2AFD2E2D2D2D2";
 	
 	//write a method called loadScore that populates the ArrayList from the contents of the String score
+	public void loadScore()
+	{
+		String s = score;
+		//s.charAt
+
+		for( int i = s.length(); i >= 0; i-- )
+		{
+			char character = s.charAt(i);
+		}
+
+		//Character.isDigit
+
+		//for loop to iterate through score, and add to notes
+
+
+		notes.add(?);
+		
+	}
+
+
 
 
 	public void settings()
