@@ -18,19 +18,36 @@ public class ScoreDisplay extends PApplet
 	public void loadScore()
 	{
 		String s = score;
-		//s.charAt
 
+		
 		for( int i = s.length(); i >= 0; i-- )
 		{
-			char character = s.charAt(i);
+			//using s.charAt
+			s.charAt(i);
+			//using Character.isDigit
+			boolean check = Character.isDigit(i);
+
+			if(check == true)
+			{
+				int duration = s.charAt(i);
+			}
+			else
+			{
+				char note = s.charAt(i);
+			}
+
+
+
+
 		}
 
-		//Character.isDigit
+		
+
 
 		//for loop to iterate through score, and add to notes
 
 
-		notes.add(?);
+		//notes.add(?);
 		
 	}
 
