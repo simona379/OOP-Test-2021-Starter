@@ -16,12 +16,16 @@ public class ScoreDisplay extends PApplet
 	//String score = "D2E2F2G2A2B2c2d2";
 	//String score = "DEF2F2F2EFA2A2B2AFD2E2D2D2D2";
 	
+	private float border;
+	private float leftBorder;
+
 
 	//if loadScore() was functional, this should iterate over ArrayList & print the score
     public void printScores()
     {
         for(Note n:notes)
         {
+			//toString() implicitly called 
             println(n);
         }
     }
@@ -80,23 +84,42 @@ public class ScoreDisplay extends PApplet
 		size(1000, 500);
 
 		// How to convert a character to a number
-		char c = '7'; // c holds the character 7 (55)
-		int i = c - '0'; // i holds the number 7 (55 - 48) 
-		println(i);
+		//char c = '7'; // c holds the character 7 (55)
+		//int i = c - '0'; // i holds the number 7 (55 - 48) 
+		//println(i);
 	}
 
 	public void setup() 
 	{
 		loadScore();
+		printScores();
+		leftBorder = width * 0.2f;;
+        border = width * 0.2f;
+        colorMode(HSB);
 	}
 
 	public void draw()
 	{
 		background(255);
+		drawNotes();
 		
 	}
 
 	void drawNotes()
 	{
+		//5 verticle lines
+		stroke(0);
+		
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+			//get x & y co-ordinates 
+			float x = map(i, 1, 5, border, width - border);
+			float y = map(i, 1, 5, border, height - border);
+
+			//drawing
+			line(border, y, width - border, y);
+		}
+
+
 	}
 }
