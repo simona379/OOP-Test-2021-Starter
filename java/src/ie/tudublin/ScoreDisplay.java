@@ -18,6 +18,8 @@ public class ScoreDisplay extends PApplet
 	
 	private float border;
 	private float leftBorder;
+	private float y;
+	private float x;
 
 
 	//if loadScore() was functional, this should iterate over ArrayList & print the score
@@ -112,14 +114,24 @@ public class ScoreDisplay extends PApplet
 		
         for(int i = 0 ; i < 5 ; i ++)
         {
-			//get x & y co-ordinates 
-			float x = map(i, 1, 5, border, width - border);
+			//get y co-ordinates 
 			float y = map(i, 1, 5, border, height - border);
 
 			//drawing
 			line(border, y, width - border, y);
 		}
 
+		//adding text
+		fill(0);
+		textAlign(LEFT, CENTER);
+
+		for(int i = 0 ; i < score.length() ; i ++)
+		{
+			//get x co-ordinates 			
+			float x = map(i, 0, score.length(), border, width - border);
+
+			text(score.charAt(i), x, border / 2);
+		}
 
 	}
 }
